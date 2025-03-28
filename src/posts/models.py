@@ -5,7 +5,7 @@ from profiles.models import Profile
 # Create your models here.
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    body = models.TextField
+    body = models.TextField(default=None)
     liked = models.ManyToManyField(User, blank=True)
     author = models.ForeignKey(Profile, on_delete=models.CASCADE)
     updateted = models.DateTimeField(auto_now=True)
